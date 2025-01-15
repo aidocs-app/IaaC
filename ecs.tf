@@ -47,6 +47,11 @@ resource "aws_ecs_task_definition" "backend" {
     Environment = var.environment
     Project     = var.project_name
   }
+
+  depends_on = [
+    aws_db_instance.postgresql,
+    aws_elasticache_cluster.redis
+  ]
 }
 
 # CloudWatch Log Group
@@ -178,5 +183,9 @@ resource "aws_ecs_service" "backend" {
     Project     = var.project_name
   }
 
-  depends_on = [aws_lb_listener.backend]
+  depends_on = [
+    aws_lb_listener.backend,
+    aws_db_instance.postgresql,
+    aws_elasticache_cluster.redis
+  ]
 }
