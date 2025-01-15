@@ -46,3 +46,22 @@ variable "db_name" {
   default     = "aidocsdb"
 }
 
+variable "ecr_image_uri" {
+  description = "URI of the Docker image in ECR"
+  type        = string
+}
+
+variable "langsmith_api_key" {
+  description = "API key for LangSmith"
+  type        = string
+}
+
+variable "openai_api_key" {
+  description = "API key for OpenAI"
+  type        = string
+}
+
+variable "together_ai_api_key" {
+  description = "API key for Together AI"
+  type        = string
+}
