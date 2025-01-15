@@ -10,3 +10,9 @@ output "public_subnets" {
 output "security_group_id" {
   value = aws_security_group.open.id
 }
+
+# Output for RDS Database Endpoint
+output "db_endpoint" {
+  description = "The endpoint of the RDS PostgreSQL database"
+  value       = aws_db_instance.postgresql.endpoint
+}

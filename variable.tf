@@ -28,3 +28,21 @@ variable "subnet_count" {
   type        = number
   default     = 2
 }
+
+# Variables for RDS
+variable "db_username" {
+  description = "Username for the RDS database"
+  type        = string
+}
+
+variable "db_password" {
+  description = "Password for the RDS database"
+  type        = string
+}
+
+variable "db_name" {
+  description = "Name of the RDS database"
+  type        = string
+  default     = "aidocsdb"
+}
+
