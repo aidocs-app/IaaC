@@ -18,6 +18,8 @@ resource "aws_amplify_app" "frontend" {
     Environment = var.environment
     Project     = var.project_name
   }
+
+  depends_on = [aws_ecs_service.backend]
 }
 
 # Branch configuration
@@ -30,6 +32,8 @@ resource "aws_amplify_branch" "main" {
   environment_variables = {
     NEXT_PUBLIC_LANGGRAPH_API_URL = "http://${aws_lb.backend.dns_name}"
   }
+
+  depends_on = [aws_ecs_service.backend]
 }
 
 # CloudWatch Log Group for Amplify
