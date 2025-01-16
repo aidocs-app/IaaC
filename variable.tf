@@ -65,3 +65,9 @@ variable "together_ai_api_key" {
   description = "API key for Together AI"
   type        = string
 }
+
+variable "github_access_token" {
+  description = "GitHub Personal Access Token for Amplify"
+  type        = string
+  sensitive   = true
+}

@@ -29,3 +29,8 @@ output "alb_dns_name" {
   description = "The DNS name of the Application Load Balancer"
   value       = aws_lb.backend.dns_name
 }
+
+output "amplify_log_group" {
+  description = "The CloudWatch log group for Amplify"
+  value       = "/aws/amplify/${aws_amplify_app.frontend.id}"
+}
