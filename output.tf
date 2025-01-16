@@ -34,3 +34,8 @@ output "amplify_log_group" {
   description = "The CloudWatch log group for Amplify"
   value       = "/aws/amplify/${aws_amplify_app.frontend.id}"
 }
+
+output "amplify_branch_url" {
+  description = "The URL for the main branch of the Amplify app"
+  value       = "https://${aws_amplify_branch.main.branch_name}.${aws_amplify_app.frontend.default_domain}"
+}
